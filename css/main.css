@@ -1,7 +1,10 @@
 /* Color customization */
 :root {
-  --primary: #f9c412;
-  --primary-dark: #e7bf60;
+  --primary: #C79E77;
+  --primary-dark: #77A0C7;
+  --tetradic-primary: #78C777;
+  --tetradic-secondary: #77A0C7;
+  --tetradic-tertiary: #C677C7;
 }
 
 .test-dead-code-elimination-sentinel {
@@ -70,7 +73,7 @@ share-widget button:active {
 }
 
 dialog {
-  background-color: #8dff80;
+  background-color: var(--tetradic-primary);
   position: fixed;
   opacity: 0.9;
   z-index: 1000;
@@ -769,7 +772,7 @@ th {
   vertical-align: top;
 }
 thead th {
-  border-bottom: 1px solid #f9c412;
+  border-bottom: 1px solid #C79E77;
 }
 table {
   display: table;
@@ -789,7 +792,7 @@ pre code:not([class]) {
 code,
 kbd {
   border-radius: 0.3em;
-  color: #e2777a;
+  color: var(--tetradic-tertiary);
   padding: 0 0.3em;
   font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
   font-size: 90%;
@@ -799,10 +802,10 @@ kbd {
   background: #2d2d2d;
 }
 kbd {
-  color: #7ec699;
+  color: var(--tetradic-primary);
 }
 mark {
-  background: #f9c412;
+  background: var(--primary);
   padding: 0 0.3em;
 }
 h1,
@@ -819,7 +822,7 @@ h6 {
   font-style: italic;
 }
 a {
-  color: #f9c412;
+  color: var(--tetradic-secondary);
   text-decoration: none;
 }
 a:hover {
@@ -953,13 +956,13 @@ input[type="submit"][disabled] {
 button:not([disabled]),
 button[type="submit"],
 input[type="submit"] {
-  background: #f9c412;
+  background: var(--tetradic-secondary);
   color: #181818;
 }
 button:not([disabled]):hover,
 button[type="submit"]:hover,
 input[type="submit"]:hover {
-  background: #ba9005;
+  background: var(--tetradic-secondary);
   color: #000;
 }
 input[type="color"],
@@ -1138,10 +1141,10 @@ dd {
   margin-left: 2.25em;
 }
 dd + dt {
-  border-top: 1px solid #f9c412;
+  border-top: 1px solid var(--primary);
 }
 blockquote {
-  border-left: 1px solid #f9c412;
+  border-left: 1px solid var(--tetradic-tertiary);
   padding: 0 1.5em;
   margin: 1.5em 0 1.5em 1.5em;
 }
@@ -1257,7 +1260,7 @@ pre[class*="language-"] {
   cursor: help;
 }
 .token.inserted {
-  color: green;
+  color: var(--tetradic-primary);
 }
 
 input[type="submit"],
@@ -1289,4 +1292,18 @@ a {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary);
+}
+
+.staff-table {
+  width: 100%;
+}
+
+/* 
+credits fo this polygon to Luciano Mammino
+https://github.com/fastify/website/pull/147
+*/
+.staff-picture {
+  height: 112px;
+  width: 112px;
+  clip-path: polygon(59.999844548019226% 92.32054673176552%,56.84023913616054% 93.79387512589675%,53.47279582181356% 94.69617275659286%,49.99983470577035% 94.99999999969643%,46.526875821860415% 94.69614724280407%,43.159439136252836% 93.79382487351238%,39.99984454815416% 92.32047326766346%,18.349250463364015% 79.82039374050645%,15.493507808397666% 77.82076325076447%,13.028386863379126% 75.35561419585301%,11.02877735314808% 72.49985685085788%,9.555438959016868% 69.34025143896247%,8.653151328320753% 65.9728081246522%,8.349314085217195% 62.49984700857227%,8.349405915344782% 37.49984700874092%,8.653268672237125% 34.026888124867725%,9.555581041528825% 30.659451439223407%,11.028942647377725% 27.499856851161457%,13.028573137119722% 24.644114196195112%,15.493712192067917% 22.17898325113984%,18.349469537063044% 20.179373740908805%,40.000155451980774% 7.679453268234471%,43.15976086383946% 6.2061248741032555%,46.52720417818644% 5.303827243407138%,50.00016529422965% 5.000000000303579%,53.473124178139585% 5.30385275719593%,56.840560863747164% 6.206175126487634%,60.00015545184584% 7.679526732336538%,81.65074953663598% 20.17960625949355%,84.50649219160233% 22.179236749235535%,86.97161313662087% 24.644385804147%,88.97122264685191% 27.500143149142122%,90.44456104098313% 30.65974856103755%,91.34684867167925% 34.027191875347796%,91.6506859147828% 37.50015299142773%,91.65059408465521% 62.50015299125908%,91.34673132776288% 65.97311187513228%,90.44441895847118% 69.3405485607766%,88.97105735262227% 72.50014314883855%,86.97142686288028% 75.35588580380488%,84.50628780793208% 77.82101674886017%,81.65053046293696% 79.82062625909118%);
 }

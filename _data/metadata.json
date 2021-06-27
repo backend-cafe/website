@@ -3,11 +3,11 @@
   "url": "https://backend.cafe",
   "domain": "backend.cafe",
   "description": "All things backend.",
-  "genre": "Insert a schema.org genre",
+  "genre": "Software",
   "googleAnalyticsId": "GA ID. Update me. Note, that this is not compatible with the not-yet-commonly used version 4 of Google Analytics",
   "sendWebVitals": false,
   "feed": {
-    "subtitle": "Subtitle. Update me.",
+    "subtitle": "Backend programming",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "id": "https://backend.cafe"
