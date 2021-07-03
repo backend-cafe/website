@@ -9,11 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="{{ csp.regular | safe }}">
-    {% if isdevelopment %}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    {% else %}
-    <link rel="icon" href="{{ '/img/favicon/favicon-192x192.png' | addHash }}" type="image/png">
-    {% endif %}
     <meta name="theme-color" content="#f9c412">
     <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview: -1">
     <title>{{ renderData.title or title or metadata.title | escape }}</title>
@@ -67,7 +63,8 @@
         </div>
         <div id="reading-progress" aria-hidden="true"></div>
       </nav>
-      <h1><img src="./img/logo-256.png" />{{ title }}</h1>
+      {% block preArticleHeader %}{% endblock %}
+      <h1>{{ title }}</h1>
       {% block extraArticleHeader %}{% endblock %}
       <dialog id="message"></dialog>
       {% if googleanalytics %}
@@ -85,7 +82,7 @@
         {% endblock %}
 
         {% if page.url.indexOf("/posts/") > -1 %}
-          <p>Published <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></p>
+          <p>Published <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time> by <b>{{ author or metadata.author.name }}</b></p>
         {% endif %}
       </article>
     </main>

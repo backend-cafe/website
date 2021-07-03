@@ -1,18 +1,30 @@
 ---
-title: backend.cafe
-layout: layouts/home.njk
+title: Backend Café
+#layout: layouts/base.njk
+templateClass: tmpl-home
 description: All things backend
 image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
 date: Last Modified
 ---
+{% extends "layouts/base.njk" %}
 
-<p>
-  This is a demo website based on 
-  <a href="https://www.industrialempathy.com/posts/eleventy-high-performance-blog/">eleventy-high-performance-blog</a>.
-</p>
+{% block preArticleHeader %}
+  <img src="./img/logo-256.png"/>
+{% endblock %}
 
-<div id="posts">
-  <h2>Posts</h2>
-  {% set postslist = collections.posts %}
-  {% include "postslist.njk" %}
-</div>
+{% block article %}
+  <p>
+    Welcome to this resource place to implement 100x 🚀 Backends!
+  </p>
+  <p>
+    Read some articles or explore <a href="{{ '/tags/' | url }}">all tags</a>.
+  </p>
+
+  <div id="posts">
+    <h2>Posts</h2>
+    {% set postslist = collections.posts %}
+    {% include "postslist.njk" %}
+  </div>
+
+  <!-- TODO: Switch to tag post when we will have them -->
+{% endblock %}

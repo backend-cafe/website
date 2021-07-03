@@ -18,10 +18,10 @@ templateClass: tmpl-post
 {% block article %}
 {{ content | safe }}
 
-<h1>🙏🙏🙏</h1>
+<h1>Share</h1>
 <p>
-  Since you've made it this far, <a href="{{ shareUrl | safe }}" on-click="share">sharing</a> this article on your favorite social media network 
-  would be highly appreciated 💖! For feedback, please 
+  If this article has been useful for you, please <a href="{{ shareUrl | safe }}" on-click="share">share it</a> on your favorite social media network!
+  It would be highly appreciated 💖! For feedback, please 
   <a href="https://twitter.com/{{ metadata.author.twitterHandle }}" target="_blank" rel="noopener">ping me on Twitter.</a>
 </p>
 
@@ -37,7 +37,7 @@ templateClass: tmpl-post
   "@type": "Article",
   "headline": "{{ title }}",
   "image": [],
-  "author": "{{ metadata.author.name }}", 
+  "author": "{{ author or metadata.author.name }}", 
   "genre": "{{ metadata.genre }}", 
   "publisher": {
     "@type": "Organization",
