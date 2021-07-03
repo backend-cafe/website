@@ -1,6 +1,6 @@
 {
   "version": "https://jsonfeed.org/version/1",
-  "title": "backend.cafe",
+  "title": "Backend Café",
   "home_page_url": "https://backend.cafe",
   "feed_url": "https://backend.cafe/feed/feed.json",
   "description": "All things backend.",
