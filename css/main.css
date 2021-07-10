@@ -1092,6 +1092,10 @@ header nav label {
   font-style: normal;
   text-align: right;
 }
+header nav .logo {
+  position: relative;
+  top: 5px;
+}
 main {
   max-width: 70rem;
   margin: 0 auto;
